@@ -1,0 +1,24 @@
+version: 2.1
+
+orbs:
+  toto:
+    commands:
+      fetch/langsmith:
+        parameters:
+          token:
+            type: string
+        steps:
+          - run: echo << parameters.token >>
+
+jobs:
+  toto:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - toto/fetch/langsmith:
+          token: a1076f4fb98259e4d1513930d9bea87b
+
+workflows:
+  toto:
+    jobs:
+      - toto
