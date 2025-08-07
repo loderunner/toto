@@ -15,6 +15,7 @@ jobs:
     docker:
       - image: cimg/base:current
     steps:
+      - checkout
       - toto/fetch-langsmith:
           token: a1076f4fb98259e4d1513930d9bea87b
 
